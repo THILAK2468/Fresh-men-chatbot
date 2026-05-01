@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { Header } from './components/Header';
-import { ConnectionManager } from './components/ConnectionManager';
 import { ChatInterface } from './components/ChatInterface';
 import { AdminDashboard } from './components/AdminDashboard';
 import { HistoryPage } from './components/HistoryPage';
 import { DocumentUpload } from './components/DocumentUpload';
 
-export type ViewType = 'chat' | 'connections' | 'upload' | 'admin' | 'history';
+export type ViewType = 'chat' | 'upload' | 'admin' | 'history';
 
 function App() {
   const [currentView, setCurrentView] = useState<ViewType>('chat');
@@ -20,7 +19,6 @@ function App() {
       
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {currentView === 'chat' && <ChatInterface user={user} />}
-        {currentView === 'connections' && <ConnectionManager />}
         {currentView === 'upload' && <DocumentUpload />}
         {currentView === 'admin' && <AdminDashboard />}
         {currentView === 'history' && <HistoryPage user={user} />}

@@ -1,5 +1,5 @@
 
-import { MessageSquare, Settings, Upload, BarChart3, Brain, History, User } from 'lucide-react';
+import { MessageSquare, Upload, BarChart3, Brain, History, User } from 'lucide-react';
 import type { ViewType } from '../App';
 
 interface HeaderProps {
@@ -11,7 +11,6 @@ interface HeaderProps {
 export function Header({ currentView, onViewChange, user }: HeaderProps) {
   const navItems = [
     { id: 'chat' as ViewType, label: 'Assistant', icon: MessageSquare },
-    { id: 'connections' as ViewType, label: 'Connections', icon: Settings },
     { id: 'upload' as ViewType, label: 'Upload', icon: Upload },
     { id: 'admin' as ViewType, label: 'Analytics', icon: BarChart3 },
     { id: 'history' as ViewType, label: 'History', icon: History },
